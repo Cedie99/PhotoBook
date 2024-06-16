@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+  padding: 5px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+   rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 1000;
+  background-color: #ffc8dd;
+  
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+nav .logo img {
+  height: 25px;
+  width: auto;
+  margin-right: 10px;
+}
+nav .logo h1 {
+  font-size: 1.1rem;
+  background: red;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin-left: 1.5rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 1px;
+  background-color: #1f1f1f;
+  display: block;
+  margin: 7px auto;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  width: 0px;
+}
+
+.hamburger-active .line:nth-child(1),
+.hamburger-active .line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(12px);
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-5px) rotate(90deg);
+}
+
+.menubar {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  height: 100vh;
+  padding: 20% 0;
+  background: #ff8fab;
+  transition: all 0.5s ease-in;
+  z-index: 2;
+}
+.active {
+  left: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.menubar ul {
+  padding: 0;
+  list-style: none;
+}
+.menubar ul li {
+  margin-bottom: 32px;
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.menubar ul li a:hover {
+  background-color: #f5f5f5;
+}
+@media screen and (max-width: 790px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+  .menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .menubar.active {
+    transform: translateX(0);
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+}
+
+
+.container {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 600px; /* Limit width on larger screens */
+  
+}
+
+.form-section {
+  background-color: lavender;
+  padding: 26px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  
+}
+
+.form-section label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+button:hover {
+  background-color: #fb6f92;
+}
+
+.form-section2 {
+  background-color: lavender;
+  padding: 26px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  max-width: 400px; /* Added max-width for better layout */
+  margin-left: auto; /* Center the form */
+  margin-right: auto; /* Center the form */
+  font-family: Arial, sans-serif; /* Added font family for better readability */
+}
+
+.form-section2 label {
+  display: block; /* Ensures labels are block elements */
+  margin-bottom: 8px; /* Space between label and input */
+  font-weight: bold; /* Make labels bold */
+  
+}
+
+.form-section button, .form-section2 button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fb6f92;
+  color: black;
+}
+
+.form-section button:hover {
+  background-color: #ff8fab;
+}
+
+.form-section2 button:hover {
+  background-color: #ff8fab; /* Darker green on hover */
+}
+
+
+.form-section span, .form-section2 span {
+  margin: 4px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  display: inline-block;
+  background-color: #f0f0f0;
+}
+
+
+.Home {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 5%;
+  background-color: #ff8fab;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.photo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.photo-container h3 {
+  font-weight: 450;
+  font-size: 16px;
+}
+
+.box {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #ffc8dd;
+  border-radius: 16px;
+}
+
+.box-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.box-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.modal img {
+  max-width: 50%;
+  max-height: 90%;
+  border-radius: 16px;
+}
+
+h2, h3 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 576px) {
+  .photo-container {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .photo-container {
+    width: 33.33%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .photo-container {
+    width: 25%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
